@@ -63,6 +63,8 @@
     <Compile Include="StateAgencies.cs" />
     <Compile Include="AboutUs.cs" />
     <Compile Include="ResourceRepository.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Glossary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
