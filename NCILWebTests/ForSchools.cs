@@ -191,28 +191,7 @@ namespace NCILWebTests
             }
 
         }
-        [TestMethod]
-        public void KidZone()
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".panel-pane.pane-custom.pane-8.margin-bottom"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-            GCDriver.FindElement(By.XPath("//*[@id='content']/div/div[1]/div[2]/div[1]/div/div/div/div/a")).Click();
-            //Assert.IsTrue(GCDriver.Title.Equals("Kid Zone! | Kid Zone! | National Center on Improving Literacy"));
-            GCDriver.Title.Equals("Kid Zone! | Kid Zone! National Center on Improving Literacy");
-        }
+ 
 
 
         public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)

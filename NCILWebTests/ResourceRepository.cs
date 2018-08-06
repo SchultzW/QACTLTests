@@ -128,8 +128,12 @@ namespace NCILWebTests
         [TestMethod]
         public void ByTopicDyslexia()
         {
+            GCDriver.Manage().Window.Maximize();
+
+            WaitUntilElementClickable(By.Id("edit-submit-resource-repository"));
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             GCDriver.FindElements(By.CssSelector(".fieldset-title"))[1].Click();
+            WaitUntilElementClickable(By.Id("edit-field-topic-tid-15"));
             GCDriver.FindElement(By.Id("edit-field-topic-tid-15")).Click();//dyslexia
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
             GCDriver.FindElement(By.LinkText("ACCESS Class Vocabulary Chart"));
@@ -168,8 +172,13 @@ namespace NCILWebTests
         [TestMethod]
         public void ByTopicGeneralLit()
         {
+            GCDriver.Manage().Window.Maximize();
+
+            WaitUntilElementClickable(By.Id("edit-submit-resource-repository"));
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            
             GCDriver.FindElements(By.CssSelector(".fieldset-title"))[1].Click();
+            WaitUntilElementClickable(By.Id("edit-field-topic-tid-309"));
             GCDriver.FindElement(By.Id("edit-field-topic-tid-309")).Click();//evidence based
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
             //GCDriver.FindElement(By.LinkText("Content of Effective Reading Instruction"));
