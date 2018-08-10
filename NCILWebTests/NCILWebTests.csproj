@@ -64,10 +64,13 @@
     <Compile Include="AboutUs.cs" />
     <Compile Include="ResourceRepository.cs" />
     <Compile Include="Events.cs" />
-    <Compile Include="Glossary.cs" />
+    <Compile Include="GlossaryLinkCheck.cs" />
     <Compile Include="KidZonePlayTest.cs" />
     <Compile Include="ImprovingLiteracyBriefs.cs" />
     <Compile Include="AskAnExpert.cs" />
+    <Compile Include="GlossaryPages.cs" />
+    <Compile Include="TestingClass.cs" />
+    <Compile Include="StateOfDyslexiaText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

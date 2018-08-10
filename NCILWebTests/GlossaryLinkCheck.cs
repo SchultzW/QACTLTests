@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 namespace NCILWebTests
 {
     [TestClass]
-    public class Glossary
+    public class GlossaryLinkCheck
     {
 
         static IWebDriver GCDriver;
