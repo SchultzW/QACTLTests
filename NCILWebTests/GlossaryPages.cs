@@ -7,6 +7,7 @@ using System.IO;
 using OpenQA.Selenium.Support.UI;
 
 
+
 namespace NCILWebTests
 {
     [TestClass]
@@ -27,8 +28,9 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/academic-language']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The formal language common in books and at school that students need to understand and communicate in academic disciplines.");
-            IsElementPresentLinkText("Succeeding in School: Essential Features of Literacy Development");
-            IsElementPresentCSS(".field.field-name-field-infographic");
+            TestingClass.IsElementPresentLinkText("Succeeding in School: Essential Features of Literacy Development", GCDriver);
+            TestingClass.IsElementPresentCSS(".field.field-name-field-infographic", GCDriver);
+            
 
         }
         [TestMethod]
@@ -36,8 +38,8 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/accuracy']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to read words correctly.");
-            IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”");
-            IsElementPresentCSS(".field.field-name-field-infographic");
+            TestingClass.IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”",GCDriver);
+            TestingClass.IsElementPresentCSS(".field.field-name-field-infographic", GCDriver);
 
         }
         [TestMethod]
@@ -53,11 +55,11 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/alphabetic-principle']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The idea that letters and groups of letters match individual sounds in words.");
-            IsElementPresentLinkText("The Alphabetic Principle: From Phonological Awareness to Reading Words");
-            IsElementPresentCSS(".field.field-name-field-infographic");
-            IsElementPresentLinkText("What’s the best way to teach the Alphabetic Principle?");
-            IsElementPresentLinkText("Enhancing the Core: Alphabetic Principle");
-            IsElementPresentLinkText("Reading Basics Webinar");
+            TestingClass.IsElementPresentLinkText("The Alphabetic Principle: From Phonological Awareness to Reading Words", GCDriver);
+            TestingClass.IsElementPresentCSS(".field.field-name-field-infographic", GCDriver);
+            TestingClass.IsElementPresentLinkText("What’s the best way to teach the Alphabetic Principle?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Enhancing the Core: Alphabetic Principle", GCDriver);
+            TestingClass.IsElementPresentLinkText("Reading Basics Webinar", GCDriver);
 
         }
         [TestMethod]
@@ -121,7 +123,7 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/diagnosis']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Identification of a disorder determined by a medical or educational professional.");
-            IsElementPresentLinkText("Can a young child (under age 6) be diagnosed with dyslexia or at that age is the focus on recognizing warning signs?");
+            TestingClass.IsElementPresentLinkText("Can a young child (under age 6) be diagnosed with dyslexia or at that age is the focus on recognizing warning signs?", GCDriver);
 
         }
         [TestMethod]
@@ -145,19 +147,19 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/dyslexia']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("A brain-based learning disability that specifically impairs a person's ability to read.");
-            IsElementPresentLinkText("Defining Dyslexia");
-            IsElementPresentLinkText("Federal Guidance on Dyslexia from the Office of Special Education and Rehabilitative Services");
-            IsElementPresentLinkText("Dyslexia Fact Sheet");
-            IsElementPresentLinkText("Information and Resources for Adolescents and Adults with Dyslexia - It's Never Too Late");
+            TestingClass.IsElementPresentLinkText("Defining Dyslexia", GCDriver);
+            TestingClass.IsElementPresentLinkText("Federal Guidance on Dyslexia from the Office of Special Education and Rehabilitative Services", GCDriver);
+            TestingClass.IsElementPresentLinkText("Dyslexia Fact Sheet", GCDriver);
+            TestingClass.IsElementPresentLinkText("Information and Resources for Adolescents and Adults with Dyslexia - It's Never Too Late", GCDriver);
         }
         [TestMethod]
         public void EligibilityCategoryOrClassification()
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/eligibility-category-or-classification']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("One or more of the categories identified in IDEA to qualify a child for special education services.");
-            IsElementPresentLinkText("IDEA Definition of Learning Disability");
-            IsElementPresentLinkText("The Individuals with Disabilities Education Act");
-            IsElementPresentLinkText("Parental Rights Under IDEA");
+            TestingClass.IsElementPresentLinkText("IDEA Definition of Learning Disability", GCDriver);
+            TestingClass.IsElementPresentLinkText("The Individuals with Disabilities Education Act", GCDriver);
+            TestingClass.IsElementPresentLinkText("Parental Rights Under IDEA", GCDriver);
            
         }
         [TestMethod]
@@ -165,9 +167,9 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/evidence-based']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("An intervention, tool, or practice that meets one of the four evidence levels in the federal Elementary and Secondary Education Act, as amended by ESSA (strong, moderate, promising, or demonstrates a rationale).");
-            IsElementPresentLinkText("What Counts as Evidence? Making Decisions for Instruction and Intervention in an MTSS Framework");
-            IsElementPresentLinkText("An SEA Guide for Identifying Evidence-Based Interventions for School improvementc");
-            IsElementPresentLinkText("An LEA Guide for Identifying Evidence-Based Interventions for School improvement");
+            TestingClass.IsElementPresentLinkText("What Counts as Evidence? Making Decisions for Instruction and Intervention in an MTSS Framework", GCDriver);
+            TestingClass.IsElementPresentLinkText("An SEA Guide for Identifying Evidence-Based Interventions for School improvement", GCDriver);
+            TestingClass.IsElementPresentLinkText("An LEA Guide for Identifying Evidence-Based Interventions for School improvement", GCDriver);
 
         }
         [TestMethod]
@@ -207,10 +209,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/fluency']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to read words, phrases, sentences, and stories correctly, with enough speed, and expression.");
-            IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”");
-            IsElementPresentLinkText("Does Your Kindergartner Read Smoothly Like This?");
-            IsElementPresentLinkText("Does Your First Grader Read Smoothly Like This?");
-            IsElementPresentLinkText("Does Your Second Grader Read Smoothly Like This?");
+            TestingClass.IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Kindergartner Read Smoothly Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your First Grader Read Smoothly Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Second Grader Read Smoothly Like This?", GCDriver);
         }
         [TestMethod]
         public void Grammar()
@@ -236,27 +238,27 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/identification']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("A process used to determine whether a child has a  disability.");
-            IsElementPresentLinkText("The Role of RTI in LD Identification webcast");
-            IsElementPresentLinkText("IDEA Definition of Learning Disability");
-            IsElementPresentLinkText("The Individuals with Disabilities Education Act");
+            TestingClass.IsElementPresentLinkText("The Role of RTI in LD Identification webcast", GCDriver);
+            TestingClass.IsElementPresentLinkText("IDEA Definition of Learning Disability", GCDriver);
+            TestingClass.IsElementPresentLinkText("The Individuals with Disabilities Education Act", GCDriver);
         }
         [TestMethod]
         public void Intervention()
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/intervention']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Additional small group or individualized instruction that is tailored to children's needs so they can make progress and be on track to meet grade level learning goals.");
-            IsElementPresentLinkText("Is there any hope of my child actually catching up to his peers?");
-            IsElementPresentLinkText("Expert Interview: Finding the Right Tutoring Program");
-            IsElementPresentLinkText("What is Responsiveness to Intervention?");
-            IsElementPresentLinkText("What Role do Parents Play in the RTI Process?");
+            TestingClass.IsElementPresentLinkText("Is there any hope of my child actually catching up to his peers?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Expert Interview: Finding the Right Tutoring Program", GCDriver);
+            TestingClass.IsElementPresentLinkText("What is Responsiveness to Intervention?", GCDriver);
+            TestingClass.IsElementPresentLinkText("What Role do Parents Play in the RTI Process?", GCDriver);
         }
         [TestMethod]
         public void IndividualizedEdcuationalProgram()
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/individualized-educational-program']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("A written learning plan for special education services that is designed to meet the specific learning needs of a child.");
-            IsElementPresentLinkText("Individualized Education Program (Spanish)");
-            IsElementPresentLinkText("Individualized Education Program");
+            TestingClass.IsElementPresentLinkText("Individualized Education Program (Spanish)", GCDriver);
+            TestingClass.IsElementPresentLinkText("Individualized Education Program", GCDriver);
             
         }
         [TestMethod]
@@ -278,10 +280,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/listening-comprehension']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to understand what others read and say to you.");
-            IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”");
-            IsElementPresentLinkText("Does Your Kindergartner Show Understanding Like This?");
-            IsElementPresentLinkText("Does Your First Grader Show Understanding Like This?");
-            IsElementPresentLinkText("Does Your Second Grader Show Understanding Like This?");
+            TestingClass.IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Kindergartner Show Understanding Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your First Grader Show Understanding Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Second Grader Show Understanding Like This?", GCDriver);
         }
         [TestMethod]
         public void Literacy()
@@ -309,10 +311,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/multi-tiered-system-support']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("A schoolwide framework that supports students who are struggling with reading, math, or social and emotional issues through different levels of intensity.");
-            IsElementPresentLinkText("What is the relationship between MTSS and diagnosis of dyslexia? Does MTSS slow down the diagnosis?");
-            IsElementPresentLinkText("The ABCs of RtI in Elementary School: A Guide for Families");
-            IsElementPresentLinkText("The ABCs of RtI in Middle Schools: A Guide for Parents");
-            IsElementPresentLinkText("A Family Guide to Response to Intervention");
+            TestingClass.IsElementPresentLinkText("What is the relationship between MTSS and diagnosis of dyslexia? Does MTSS slow down the diagnosis?", GCDriver);
+            TestingClass.IsElementPresentLinkText("The ABCs of RtI in Elementary School: A Guide for Families", GCDriver);
+            TestingClass.IsElementPresentLinkText("The ABCs of RtI in Middle Schools: A Guide for Parents", GCDriver);
+            TestingClass.IsElementPresentLinkText("A Family Guide to Response to Intervention", GCDriver);
         }
         [TestMethod]
         public void NonverbalLearningDisabilities()
@@ -347,10 +349,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/phonemic-awareness']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to identify and play with individual sounds in spoken words.");
-            IsElementPresentLinkText("Ask & Answer: Phonemic Awareness");
-            IsElementPresentLinkText("Blending and Segmenting Games");
-            IsElementPresentLinkText("Elkonin Boxes");
-            IsElementPresentLinkText("Phonemic Awareness: Watch & Learn");
+            TestingClass.IsElementPresentLinkText("Ask & Answer: Phonemic Awareness", GCDriver);
+            TestingClass.IsElementPresentLinkText("Blending and Segmenting Games", GCDriver);
+            TestingClass.IsElementPresentLinkText("Elkonin Boxes", GCDriver);
+            TestingClass.IsElementPresentLinkText("Phonemic Awareness: Watch & Learn", GCDriver);
 
         }
         [TestMethod]
@@ -358,9 +360,9 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/phonics']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Reading instruction on understanding how letters and groups of letters link to sounds to form letter-sound relationships and spelling patterns.");
-            IsElementPresentLinkText("Does Your Kindergartner Decode Like This?");
-            IsElementPresentLinkText("Does Your First Grader Decode Like This?");
-            IsElementPresentLinkText("Does Your Second Grader Decode Like This?");
+            TestingClass.IsElementPresentLinkText("Does Your Kindergartner Decode Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your First Grader Decode Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Second Grader Decode Like This?", GCDriver);
             
 
         }
@@ -369,9 +371,9 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/phonological-awareness']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to recognize that spoken words are made up of individual sound parts.");
-            IsElementPresentLinkText("How We Learn to Read: The Critical Role of Phonological Awareness");
-            IsElementPresentLinkText("Preschool Parent Practice Literacy Guides: Rhymes and Sound Awareness");
-            IsElementPresentLinkText("Just Take 20 Rhyme Time Activity");
+            TestingClass.IsElementPresentLinkText("How We Learn to Read: The Critical Role of Phonological Awareness", GCDriver);
+            TestingClass.IsElementPresentLinkText("Preschool Parent Practice Literacy Guides: Rhymes and Sound Awareness", GCDriver);
+            TestingClass.IsElementPresentLinkText("Just Take 20 Rhyme Time Activity", GCDriver);
 
 
         }
@@ -408,10 +410,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/reading-comprehension']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("The ability to understand what you are reading.");
-            IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”");
-            IsElementPresentLinkText("Does Your Kindergartner Show Understanding Like This?");
-            IsElementPresentLinkText("Does Your First Grader Show Understanding Like This?");
-            IsElementPresentLinkText("Does Your Second Grader Show Understanding Like This?");
+            TestingClass.IsElementPresentLinkText("Learning to Read: “The Simple View of Reading”", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Kindergartner Show Understanding Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your First Grader Show Understanding Like This?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Does Your Second Grader Show Understanding Like This?", GCDriver);
 
         }
         [TestMethod]
@@ -433,9 +435,9 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/screening']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Short processes to find students who need help in reading, writing, spelling, or math.");
-            IsElementPresentLinkText("Learn the Signs, Act Early: Age 5 Milestones");
-            IsElementPresentLinkText("Learn the Signs, Act Early: Video of Age 5 Milestones");
-            IsElementPresentLinkText("Milestones of Early Literacy Development");
+            TestingClass.IsElementPresentLinkText("Learn the Signs, Act Early: Age 5 Milestones", GCDriver);
+            TestingClass.IsElementPresentLinkText("Learn the Signs, Act Early: Video of Age 5 Milestones", GCDriver);
+            TestingClass.IsElementPresentLinkText("Milestones of Early Literacy Development", GCDriver);
         }
         [TestMethod]
         public void SelfMonitoring()
@@ -469,7 +471,7 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/systematic-instruction']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Teaching that has a carefully planned sequence, including building from easier to more difficult tasks and breaking down harder skills into smaller parts.");
-            IsElementPresentLinkText("Practice Guides for Families: Getting Specific Guide");
+            TestingClass.IsElementPresentLinkText("Practice Guides for Families: Getting Specific Guide", GCDriver);
         }
         [TestMethod]
         public void VisualAcuity()
@@ -490,9 +492,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.CssSelector("[href *= '/glossary/vocabulary']")).Click();
             GCDriver.FindElement(By.ClassName("lead")).Text.Equals("Knowing what words mean and how to say and use them correctly.");
-            IsElementPresentLinkText("Can Your Kindergartner Figure Out the Meaning of New Words?");
-            IsElementPresentLinkText("Can Your First Grader Figure Out the Meaning of New Words?");
-            IsElementPresentLinkText("Can Your Second Grader Figure Out the Meaning of New Words?");
+
+            TestingClass.IsElementPresentLinkText("Can Your Kindergartner Figure Out the Meaning of New Words?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Can Your First Grader Figure Out the Meaning of New Words?", GCDriver);
+            TestingClass.IsElementPresentLinkText("Can Your Second Grader Figure Out the Meaning of New Words?", GCDriver);
         }
         [TestMethod]
         public void WrittenLanguage()
@@ -509,154 +512,18 @@ namespace NCILWebTests
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/glossary/module/ask-answer-phonemic-awareness");
             GCDriver.FindElement(By.LinkText("Download Phonemic-Awareness-Module-Transcript.pdf")).Click();
             System.Threading.Thread.Sleep(6000);
-            Assert.IsTrue(CheckFileDownloaded("honemic-Awareness-Module-Transcript.pdf"));
+            Assert.IsTrue(TestingClass.CheckFileDownloaded("honemic-Awareness-Module-Transcript.pdf"));
             GCDriver.FindElement(By.PartialLinkText("Download Phonemic-Awareness-Module-Audio.mp4")).Click();
             System.Threading.Thread.Sleep(6000);
-            Assert.IsTrue(CheckFileDownloaded("Phonemic-Awareness-Module-Audio.mp4"));
+            Assert.IsTrue(TestingClass.CheckFileDownloaded("Phonemic-Awareness-Module-Audio.mp4"));
             GCDriver.FindElement(By.XPath("//*[@id='content']/div[2]"));
-            IsElementPresentXpath("//*[@id='content']/div[2]");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div[2]", GCDriver);
 
 
         }
 
 
-        public void IsElementPresentXpath(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.XPath(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentLinkText(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.LinkText(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentClassName(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.ClassName(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentCSS(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
-        private static bool CheckFileDownloaded(string filename)
-        {
-            bool exist = false;
-            string Path = System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads";
-            string[] filePaths = Directory.GetFiles(Path);
-            foreach (string p in filePaths)
-            {
-                if (p.Contains(filename))
-                {
-                    FileInfo thisFile = new FileInfo(p);
-                    //Check the file that are downloaded in the last 3 minutes
-                    if (thisFile.LastWriteTime.ToShortTimeString() == DateTime.Now.ToShortTimeString() ||
-                    thisFile.LastWriteTime.AddMinutes(1).ToShortTimeString() == DateTime.Now.ToShortTimeString() ||
-                    thisFile.LastWriteTime.AddMinutes(2).ToShortTimeString() == DateTime.Now.ToShortTimeString() ||
-                    thisFile.LastWriteTime.AddMinutes(3).ToShortTimeString() == DateTime.Now.ToShortTimeString())
-                        exist = true;
-                    File.Delete(p);
-                    
-                    break;
-                }
-            }
-            return exist;
-
-        }
+        
 
         [TestCleanup]
         public void CloseDrivers()

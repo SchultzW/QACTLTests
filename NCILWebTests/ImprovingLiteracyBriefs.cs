@@ -230,10 +230,10 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.LinkText("Defining Dyslexia")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Defining Dyslexia | National Center on Improving Literacy"));
-            IsElementPresentCSS("[href *= 'improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Defining-Dyslexia.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[7]/a/img");
-            IsElementPresentLinkText("Related Resources");
+            TestingClass.IsElementPresentCSS("[href *= 'improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Defining-Dyslexia.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[7]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
             
 
 
@@ -244,11 +244,11 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("How We Learn to Read: The Critical Role of Phonological Awareness")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("How We Learn to Read: The Critical Role of Phonological Awareness | National Center on Improving Literacy"));
 
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/how-we-learn-to-read-the-critical-role-of-phonological-awareness.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/how-we-learn-to-read-the-critical-role-of-phonological-awareness.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
 
         }
         [TestMethod]
@@ -257,11 +257,11 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("Learning About Your Child’s Reading Development")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Learning About Your Child’s Reading Development | National Center on Improving Literacy"));
 
-            IsElementPresentCSS("[href *= 'improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/learning-about-your-childs-reading-development.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[8]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= 'improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/learning-about-your-childs-reading-development.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[8]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
 
         }
         [TestMethod]
@@ -269,11 +269,11 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.LinkText("Learning to Read: “The Simple View of Reading”")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Learning to Read: “The Simple View of Reading” | National Center on Improving Literacy"));
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Learing-to-Read-The-Simple-View-of-Reading.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[11]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Learing-to-Read-The-Simple-View-of-Reading.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[11]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
 
 
         }
@@ -282,11 +282,11 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.LinkText("Partnering With Your Child’s School")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Partnering With Your Child’s School | National Center on Improving Literacy"));
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Partnering-With-Childs-School.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Partnering-With-Childs-School.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
            
         }
         [TestMethod]
@@ -295,11 +295,11 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("Succeeding in School: Essential Features of Literacy Development")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Succeeding in School: Essential Features of Literacy Development | National Center on Improving Literacy"));
 
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/succeeding-in-schools-essential-features-of-literacy-development.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[9]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/succeeding-in-schools-essential-features-of-literacy-development.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[9]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
 
         }
         [TestMethod]
@@ -307,14 +307,14 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.LinkText("Supporting Your Child’s Literacy Development at Home")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Supporting Your Child’s Literacy Development at Home | National Center on Improving Literacy"));
-            
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Supporting-Your-Child-Literacy-Development-at-Home.pdf']");        
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");           
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[9]/a/img");          
-            IsElementPresentLinkText("Related Resources");          
-            IsElementPresentCSS(".panel.panel-default.panel-horizontal");
-            IsElementPresentCSS(".panel-heading");
-            IsElementPresentClassName("margin-bottom");//keep reading
+
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/Supporting-Your-Child-Literacy-Development-at-Home.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[9]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentCSS(".panel.panel-default.panel-horizontal",GCDriver);
+            TestingClass.IsElementPresentCSS(".panel-heading",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
 
         }
         [TestMethod]
@@ -323,13 +323,13 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("The Alphabetic Principle: From Phonological Awareness to Reading Words")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("The Alphabetic Principle: From Phonological Awareness to Reading Words | National Center on Improving Literacy"));
 
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/the-alphabetic-principle.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[15]/a/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[16]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
-            IsElementPresentCSS(".panel-heading");
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/the-alphabetic-principle.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[15]/a/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[16]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentCSS(".panel-heading",GCDriver);
 
         }
         [TestMethod]
@@ -338,130 +338,15 @@ namespace NCILWebTests
 
             GCDriver.FindElement(By.LinkText("What Do We Mean by Evidence-based?")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("What Do We Mean by Evidence-based? | National Center on Improving Literacy"));
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/what-do-we-mean-by-evidence-based.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[4]/a/img");
-            IsElementPresentLinkText("Related Resources");
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/what-do-we-mean-by-evidence-based.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[4]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
 
             
 
         }
-        public void IsElementPresentXpath(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.XPath(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentLinkText(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.LinkText(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentClassName(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.ClassName(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentCSS(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-
-
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
+       
 
         [TestCleanup]
         public void CloseDrivers()

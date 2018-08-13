@@ -30,33 +30,23 @@ namespace NCILWebTests
         public void TestHeader()
         {
             //header title
-            Assert.IsTrue(TextCheckMethodClassName("You are here\r\nHome\r\nParents & Families\r\nHelp your child learn to read and write with practical ideas and expert-approved strategies.", "col-sm-8"));
+            Assert.IsTrue(GCDriver.FindElement(By.ClassName("col-sm-8")).Text.Equals("You are here\r\nHome\r\nParents & Families\r\nHelp your child learn to read and write with practical ideas and expert-approved strategies."));
+            
             //header description
-            Assert.IsTrue(TextCheckMethodCSS("Help your child learn to read and write with practical ideas and expert-approved strategies.", ".block.block-block.first.last.odd"));
-            //Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".container.header-icon")).Displayed;
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".container.header-icon"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
+            Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".block.block-block.first.last.odd")).Text.Equals("Help your child learn to read and write with practical ideas and expert-approved strategies."));
+            
+            TestingClass.IsElementPresentCSS(".container.header-icon", GCDriver);
 
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
    
         }
         [TestMethod]
         public void WhatsNewAndFeaturedBrief()
         {
             //tests the literary brieg text
-            Assert.IsTrue(TextCheckMethodCSS("What's New", ".panel-pane.pane-custom.pane-7"));
-            Assert.IsTrue(TextCheckMethodLinkText("Featured Literacy Brief", "Featured Literacy Brief"));
+            
+
+            Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".panel-pane.pane-custom.pane-7")).Text.Equals("What's New"));
+            Assert.IsTrue(GCDriver.FindElement(By.LinkText("Featured Literacy Brief")).Text.Equals("Featured Literacy Brief"));
 
         }
         [TestMethod]
@@ -69,38 +59,16 @@ namespace NCILWebTests
         [TestMethod]
         public void PhonicAwareness()
         {
-            Assert.IsTrue(TextCheckMethodLinkText("Phonemic Awareness", "Phonemic Awareness"));
+            
+            Assert.IsTrue(GCDriver.FindElement(By.LinkText("Phonemic Awareness")).Text.Equals("Phonemic Awareness"));
             // Assert.IsTrue(TextCheckMethodXPath("Definition", "fa fa-info-circle"));
             // Assert.IsTrue(TextCheckMethodCSS(" Learn More", ".fa.fa-graduation-cap"));
-            Assert.IsTrue(TextCheckMethodClassName("More Glossary Terms", "more-link"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".fa.fa-graduation-cap"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-            if (TryFindElement(By.CssSelector(".fa.fa-info-circle"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            
+            Assert.IsTrue(GCDriver.FindElement(By.ClassName("more-link")).Text.Equals("More Glossary Terms"));
+            TestingClass.IsElementPresentCSS(".fa.fa-graduation-cap", GCDriver);
+           
+            TestingClass.IsElementPresentCSS(".fa.fa-info-circle", GCDriver);
+           
         }
         [TestMethod]
         public void PhonicAwarenessLinks()
@@ -118,7 +86,8 @@ namespace NCILWebTests
         [TestMethod]
         public void AskAnExpertTest()
         {
-            TextCheckMethodLinkText("Featured Ask an Expert Question", "Featured Ask an Expert Question");
+           
+            Assert.IsTrue(GCDriver.FindElement(By.LinkText("Featured Ask an Expert Question")).Text.Equals("Featured Ask an Expert Question"));
         }
         [TestMethod]
         public void ArePresent()
@@ -129,7 +98,7 @@ namespace NCILWebTests
             IList<IWebElement> elements = GCDriver.FindElements(By.ClassName(".panel.panel-default.panel-horizontal"));
             foreach (IWebElement listElement in elements)
             {
-                    bool visable = IsElementVisible(listElement);
+                    bool visable = TestingClass.IsElementVisible(listElement);
                     if (visable == true)
                         flag = true;
                     else
@@ -141,26 +110,11 @@ namespace NCILWebTests
         [TestMethod]
         public void TwitterIsPresent()
         {
-            IWebElement element = null;
-            bool flag = false;
-        
 
             GCDriver.SwitchTo().Frame("twitter-widget-0");
-            element = null;
-            flag = false;
-            if (TryFindElement(By.CssSelector(".timeline-Tweet-brand.u-floatRight"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+           
+            TestingClass.IsElementPresentCSS(".timeline-Tweet-brand.u-floatRight", GCDriver);
+            
         }
         [TestMethod]
         public void AskAnExpertLink()
@@ -177,6 +131,7 @@ namespace NCILWebTests
         [TestMethod]
         public void ToolsAndEvents()
         {
+
             //tests if the tools and events boxes are present
             
             bool flag = false;
@@ -184,7 +139,7 @@ namespace NCILWebTests
             foreach(IWebElement element in elements)
             {
 
-                bool visable = IsElementVisible(element);
+                bool visable = TestingClass.IsElementVisible(element);
                 if (visable == true)
                     flag = true;
                 else
@@ -197,24 +152,11 @@ namespace NCILWebTests
         [TestMethod]
         public void KidZone()
         {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".panel-pane.pane-custom.pane-8.margin-bottom"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".panel-pane.pane-custom.pane-8.margin-bottom",GCDriver);
+           
             GCDriver.FindElement(By.XPath("//*[@id='content']/div/div[1]/div[2]/div[1]/div/div/div/div/a")).Click();
             //Assert.IsTrue(GCDriver.Title.Equals("Kid Zone! | Kid Zone! | National Center on Improving Literacy"));
-            GCDriver.Title.Equals("Kid Zone! | Kid Zone! National Center on Improving Literacy");
+           Assert.IsTrue(GCDriver.Title.Equals("Kid Zone! | Kid Zone! National Center on Improving Literacy"));
         }
 
 
@@ -225,57 +167,7 @@ namespace NCILWebTests
             //GCDriver.Close();
         }
 
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodLinkText(string txtTocheck, string linkText)
-        {
-            if (GCDriver.FindElement(By.LinkText(linkText)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        //testing these methods may remove
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
-
+     
 
     }
 }

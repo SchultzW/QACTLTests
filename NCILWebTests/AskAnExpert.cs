@@ -31,9 +31,9 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("Can a young child (under age 6) be diagnosed with dyslexia or at that age is the focus on recognizing warning signs?")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Can a young child (under age 6) be diagnosed with dyslexia or at that age is the focus on recognizing warning signs? | National Center on Improving Literacy"));
             Assert.IsTrue(GCDriver.FindElement(By.Id("page-title")).Text.Equals("Can a young child (under age 6) be diagnosed with dyslexia or at that age is the focus on recognizing warning signs?"));
-            IsElementPresentClassName("action");
-            IsElementPresentClassName("figure");
-            IsElementPresentLinkText("Related Resources");
+            TestingClass.IsElementPresentClassName("action",GCDriver);
+            TestingClass.IsElementPresentClassName("figure",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
 
         }
         [TestMethod]
@@ -42,21 +42,22 @@ namespace NCILWebTests
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             GCDriver.FindElement(By.LinkText("What is the relationship between MTSS and diagnosis of dyslexia? Does MTSS slow down the diagnosis?")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("What is the relationship between MTSS and diagnosis of dyslexia? Does MTSS slow down the diagnosis? | National Center on Improving Literacy"));
-            IsElementPresentClassName("action");
-            IsElementPresentClassName("figure");
-            IsElementPresentLinkText("Related Resources");
+            TestingClass.IsElementPresentClassName("action",GCDriver);
+            TestingClass.IsElementPresentClassName("figure",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
         }
         [TestMethod]
         public void LegislationAndPolicy()
         {
             GCDriver.Manage().Window.Maximize();
             GCDriver.FindElement(By.XPath("//*[@id='ui-accordion-1-header-1']/a")).Click();
+            System.Threading.Thread.Sleep(6000);
             WaitUntilElementClickable(By.LinkText("Does Special Education law include dyslexia?"));
             GCDriver.FindElement(By.LinkText("Does Special Education law include dyslexia?")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Does Special Education law include dyslexia? | National Center on Improving Literacy"));
-            IsElementPresentClassName("action");
-            IsElementPresentClassName("figure");
-            IsElementPresentLinkText("Related Resources");
+            TestingClass.IsElementPresentClassName("action",GCDriver);
+            TestingClass.IsElementPresentClassName("figure",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
         }
 
 
@@ -74,117 +75,7 @@ namespace NCILWebTests
                 throw;
             }
         }
-        public void IsElementPresentXpath(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.XPath(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentLinkText(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.LinkText(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentClassName(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.ClassName(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public void IsElementPresentCSS(string whereToLook)
-        {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(whereToLook), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
-        }
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-
-
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
+       
 
         public bool IsElementVisible(IWebElement element)
         {

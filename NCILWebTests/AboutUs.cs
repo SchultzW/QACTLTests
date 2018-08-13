@@ -66,41 +66,23 @@ namespace NCILWebTests
         [TestMethod]
         public void PictureTest()
         {
-         //tests if staff pictures are presenet and visable on about page   
-            bool flag = false;
-          IList<IWebElement>elements = GCDriver.FindElements(By.CssSelector(".figure"));
-                foreach(IWebElement element in elements)
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
+            //tests if staff pictures are presenet and visable on about page   
+            TestingClass.IsElementPresentCSS(".figure", GCDriver);
+          
            
         }
         [TestMethod]
         public void YoutubePresent()
         {
-         //   GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            IWebElement element = null;
-            bool flag = false;
+            //GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             GCDriver.SwitchTo().Frame(0);
-            if (TryFindElement(By.XPath("//*[@id='player']"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
+            
+            TestingClass.IsElementPresentXpath("//*[@id='player']", GCDriver);
+            //*[@id="player_uid_501086740_1"]/div[3]/div[1]/div[2]/a
 
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+
+
+
         }
 
         [TestMethod]
@@ -130,56 +112,7 @@ namespace NCILWebTests
             //GCDriver.Close();
         }
 
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodLinkText(string txtTocheck, string linkText)
-        {
-            if (GCDriver.FindElement(By.LinkText(linkText)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        //testing these methods may remove
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
+        
 
     }
 }
