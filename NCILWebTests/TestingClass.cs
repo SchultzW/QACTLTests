@@ -96,26 +96,26 @@ namespace NCILWebTests
                 flag = false;
             Assert.IsTrue(flag);
         }
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
+        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck, IWebDriver driver)
         {
-
+            bool flag;
             //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
+            if (driver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
+               
                 return true;
             else
                 return false;
         }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
+        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck, IWebDriver driver)
         {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
+            if (driver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
                 return true;
             else
                 return false;
         }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
+        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck, IWebDriver driver)
         {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
+            if (driver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
                 return true;
             else
                 return false;

@@ -15,8 +15,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/ask-an-expert");
         }
         [TestMethod]

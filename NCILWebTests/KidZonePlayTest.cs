@@ -23,8 +23,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/kid-zone/play");
         }
         [TestMethod]
@@ -38,21 +39,8 @@ namespace NCILWebTests
             int Count = 0;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count]+" | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3",GCDriver);
+         
             GCDriver.FindElement(By.LinkText("Download App")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count]+" | National Center on Improving Literacy"));
             
@@ -64,21 +52,8 @@ namespace NCILWebTests
             int Count = 1;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count]+" | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
 
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count]+" | National Center on Improving Literacy"));
             
@@ -89,21 +64,7 @@ namespace NCILWebTests
             int Count = 2;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             Count++;
@@ -114,21 +75,8 @@ namespace NCILWebTests
             int Count = 3;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
+            
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -139,21 +87,7 @@ namespace NCILWebTests
             int Count = 4;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -164,21 +98,7 @@ namespace NCILWebTests
             int Count = 5;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             Count++;
@@ -189,21 +109,7 @@ namespace NCILWebTests
             int Count = 6;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             Count++;
@@ -214,21 +120,7 @@ namespace NCILWebTests
             int Count = 7;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -239,21 +131,7 @@ namespace NCILWebTests
             int Count = 8;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -264,21 +142,7 @@ namespace NCILWebTests
             int Count = 9;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -289,21 +153,7 @@ namespace NCILWebTests
             int Count = 10;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -314,21 +164,7 @@ namespace NCILWebTests
             int Count = 11;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -339,21 +175,7 @@ namespace NCILWebTests
             int Count = 12;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -364,21 +186,7 @@ namespace NCILWebTests
             int Count = 13;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -389,21 +197,7 @@ namespace NCILWebTests
             int Count = 14;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -414,21 +208,7 @@ namespace NCILWebTests
             int Count = 15;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             
@@ -439,21 +219,7 @@ namespace NCILWebTests
             int Count = 16;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             Count++;
@@ -464,48 +230,13 @@ namespace NCILWebTests
             int Count = 17;
             GCDriver.FindElement(By.LinkText(gameTitle[Count])).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".col-sm-3"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".col-sm-3", GCDriver);
+            
             GCDriver.FindElement(By.CssSelector(".btn.btn-action.btn-go")).Click();
             Assert.IsTrue(GCDriver.Title.Equals(gameTitle[Count] + " | National Center on Improving Literacy"));
             Count++;
         }
 
-
-
-
-
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
         [TestCleanup]
         public void CloseDrivers()
         {

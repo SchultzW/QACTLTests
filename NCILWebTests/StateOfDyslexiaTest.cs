@@ -36,7 +36,7 @@ namespace NCILWebTests
                                             {"https://improvingliteracy.org/state-of-dyslexia/arizona","yes","yes","no","yes","yes","yes" },
                                             {"https://improvingliteracy.org/state-of-dyslexia/arkansas","yes","yes","yes","yes","yes","yes" },
                                             {"https://improvingliteracy.org/state-of-dyslexia/california","yes","no","no","no","no","yes" },
-                                            {"https://improvingliteracy.org/state-of-dyslexia/colorado","yes","no","no","no","yes","yes" },
+                                            {"https://improvingliteracy.org/state-of-dyslexia/colorado","yes","no","no","no","no","yes" },
                                             {"https://improvingliteracy.org/state-of-dyslexia/connecticut", "yes","no","yes","yes","no","yes"},
                                             {"https://improvingliteracy.org/state-of-dyslexia/delaware", "yes","no","no","no","no","yes"},
                                             {"https://improvingliteracy.org/state-of-dyslexia/georgia","yes","no","no","no","no","no" },
@@ -70,7 +70,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDriver()
         {
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
         }
         //[TestMethod]
         //public void TestStateSummaryBox()

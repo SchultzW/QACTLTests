@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
+using System.Drawing;
+using OpenQA.Selenium.Support.UI;
 
 namespace NCILWebTests
 {
@@ -14,18 +16,28 @@ namespace NCILWebTests
         public void SetUpDrivers()
         {
 
-            GCDriver = new ChromeDriver();
+            
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/events");
+
+            
         }
         [TestMethod]
         public void TestTitle()
         {
+
+            
+            
             Assert.IsTrue(GCDriver.Title.Equals("Events & Opportunites | National Center on Improving Literacy"));
         }
         [TestMethod]
         public void TestHeaderText()
         {
-          Assert.IsTrue(GCDriver.FindElement(By.Id("block-block-8")).Text.Equals("Find upcoming regional professional development, workshops, and conferences."));
+
+            
+            Assert.IsTrue(GCDriver.FindElement(By.Id("block-block-8")).Text.Equals("Find upcoming regional professional development, workshops, and conferences."));
         }
         [TestMethod]
         public void TestButtonSubscribe()

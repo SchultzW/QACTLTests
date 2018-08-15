@@ -15,8 +15,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/brief");
         }
 
@@ -24,23 +25,10 @@ namespace NCILWebTests
         public void TestTitle()
         {
             Assert.IsTrue(GCDriver.Title.Equals("Improving Literacy Briefs | National Center on Improving Literacy"));
-            Assert.IsTrue(TextCheckMethodCSS("Improving Literacy Briefs", ".page__title"));
-            Assert.IsTrue(TextCheckMethodClassName("Read research summaries and infographics written by our experts that simplify complex ideas related to literacy.", "lead"));
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".container.header-icon"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            Assert.IsTrue(TestingClass.TextCheckMethodCSS("Improving Literacy Briefs", ".page__title",GCDriver));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("Read research summaries and infographics written by our experts that simplify complex ideas related to literacy.", "lead",GCDriver));
+            TestingClass.IsElementPresentCSS(".container.header-icon", GCDriver);
+          
         }
         [TestMethod]
         public void ByAudicenceFamily()
@@ -207,10 +195,10 @@ namespace NCILWebTests
             GCDriver.FindElement(By.LinkText("Advocating for My Child’s Literacy Needs")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Advocating for My Child’s Literacy Needs | National Center on Improving Literacy"));
 
-            IsElementPresentLinkText("Download PDF");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentLinkText("Download PDF",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
           
         }
         [TestMethod]
@@ -218,11 +206,11 @@ namespace NCILWebTests
         {
             GCDriver.FindElement(By.LinkText("Key Roles for Children’s Literacy Success")).Click();
             Assert.IsTrue(GCDriver.Title.Equals("Key Roles for Children’s Literacy Success | National Center on Improving Literacy"));
-            IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/key-roles-for-childrens-reading-success.pdf']");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img");
-            IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img");
-            IsElementPresentLinkText("Related Resources");
-            IsElementPresentClassName("margin-bottom");//keep reading
+            TestingClass.IsElementPresentCSS("[href *= '/improvingliteracy.org/sites/improvingliteracy1.uoregon.edu/files/briefs/key-roles-for-childrens-reading-success.pdf']",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
+            TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
+            TestingClass.IsElementPresentClassName("margin-bottom", GCDriver);//keep reading
 
         }
         [TestMethod]

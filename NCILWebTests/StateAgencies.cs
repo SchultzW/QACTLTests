@@ -13,8 +13,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state");
         }
         [TestMethod]
@@ -30,25 +31,13 @@ namespace NCILWebTests
         public void TestHeader()
         {
             //header title
-            Assert.IsTrue(TextCheckMethodClassName("You are here\r\nHome\r\nState Agencies\r\nDevelop and implement state and local structures, procedures and policies to address student challenges in learning to read and write.", "col-sm-8"));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("You are here\r\nHome\r\nState Agencies\r\nDevelop and implement state and local structures, procedures and policies to address student challenges in learning to read and write.", "col-sm-8",GCDriver));
             //header description
-            Assert.IsTrue(TextCheckMethodCSS("Develop and implement state and local structures, procedures and policies to address student challenges in learning to read and write.", ".block.block-block.first.last.odd"));
+            Assert.IsTrue(TestingClass.TextCheckMethodCSS("Develop and implement state and local structures, procedures and policies to address student challenges in learning to read and write.", ".block.block-block.first.last.odd",GCDriver));
             //Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".container.header-icon")).Displayed;
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".container.header-icon"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
 
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".container.header-icon", GCDriver);
+         
 
         }
 
@@ -56,9 +45,9 @@ namespace NCILWebTests
         public void WhatsNewAndFeaturedBrief()
         {
             //tests the literary brieg text
-            Assert.IsTrue(TextCheckMethodCSS("What's New", ".panel-pane.pane-custom.pane-7"));
-            Assert.IsTrue(TextCheckMethodLinkText("Featured Literacy Brief", "Featured Literacy Brief"));
-
+            Assert.IsTrue(TestingClass.TextCheckMethodCSS("What's New", ".panel-pane.pane-custom.pane-7",GCDriver));
+            
+            Assert.IsTrue(GCDriver.FindElement(By.LinkText("Featured Literacy Brief")).Text.Equals("Featured Literacy Brief"));
         }
         [TestMethod]
         public void FeaturedBriefLinkCheck()
@@ -71,7 +60,8 @@ namespace NCILWebTests
         [TestMethod]
         public void AskAnExpertTest()
         {
-            TextCheckMethodLinkText("Featured Ask an Expert Question", "Featured Ask an Expert Question");
+            
+            Assert.IsTrue(GCDriver.FindElement(By.LinkText("Featured Ask an Expert Question")).Text.Equals("Featured Ask an Expert Question"));
         }
         [TestMethod]
         public void ArePresent()
@@ -82,7 +72,7 @@ namespace NCILWebTests
             IList<IWebElement> elements = GCDriver.FindElements(By.ClassName(".panel.panel-default.panel-horizontal"));
             foreach (IWebElement listElement in elements)
             {
-                bool visable = IsElementVisible(listElement);
+                bool visable = TestingClass.IsElementVisible(listElement);
                 if (visable == true)
                     flag = true;
                 else
@@ -94,26 +84,12 @@ namespace NCILWebTests
         [TestMethod]
         public void TwitterIsPresent()
         {
-            IWebElement element = null;
-            bool flag = false;
+            
 
 
             GCDriver.SwitchTo().Frame("twitter-widget-0");
-            element = null;
-            flag = false;
-            if (TryFindElement(By.CssSelector(".timeline-Tweet-brand.u-floatRight"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            TestingClass.IsElementPresentCSS(".timeline-Tweet-brand.u-floatRight", GCDriver);
+          
         }
         [TestMethod]
         public void AskAnExpertLink()
@@ -137,7 +113,7 @@ namespace NCILWebTests
             foreach (IWebElement element in elements)
             {
 
-                bool visable = IsElementVisible(element);
+                bool visable = TestingClass.IsElementVisible(element);
                 if (visable == true)
                     flag = true;
                 else
@@ -150,21 +126,9 @@ namespace NCILWebTests
         [TestMethod]
         public void LiasonPresent()
         {
-            IWebElement element = null;
-            bool flag = false;
-            if (TryFindElement(By.CssSelector(".panel-pane.pane-custom.pane-8"), out element))
-            {
-                bool visable = IsElementVisible(element);
-                if (visable == true)
-                    flag = true;
-                else
-                    flag = false;
-
-                Assert.IsTrue(flag);
-            }
-            else
-                flag = false;
-            Assert.IsTrue(flag);
+            
+            TestingClass.IsElementPresentCSS(".panel-pane.pane-custom.pane-8",GCDriver);
+           
         }
         [TestMethod]
         public void LiasonText()
@@ -182,7 +146,7 @@ namespace NCILWebTests
             foreach (IWebElement element in elements)
             {
 
-                bool visable = IsElementVisible(element);
+                bool visable = TestingClass.IsElementVisible(element);
                 if (visable == true)
                     flag = true;
                 else
@@ -200,55 +164,6 @@ namespace NCILWebTests
             //GCDriver.Close();
         }
 
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodLinkText(string txtTocheck, string linkText)
-        {
-            if (GCDriver.FindElement(By.LinkText(linkText)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        //testing these methods may remove
-        public bool TryFindElement(By by, out IWebElement element)
-        {
-            try
-            {
-                element = GCDriver.FindElement(by);
-            }
-            catch (NoSuchElementException ex)
-            {
-                element = null;
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsElementVisible(IWebElement element)
-        {
-            return element.Displayed && element.Enabled;
-        }
+        
     }
 }

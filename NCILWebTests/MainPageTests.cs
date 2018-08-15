@@ -13,8 +13,9 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-
-            GCDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
+            GCDriver = new ChromeDriver(options);
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/");
         }
 
@@ -32,9 +33,9 @@ namespace NCILWebTests
             Console.WriteLine("1 Testing Tagline Text");
             //GCDriver.FindElement(By.ClassName("tagline")).Text.CompareTo("Your source for improving outcomes for students with " +
             //                                                                   "literacy-related disabilities, including dyslexia.");
-            Assert.IsTrue(TextCheckMethodClassName("Your source for improving outcomes for students with " +
-                                                                                "literacy-related disabilities, including dyslexia.", "tagline"));
-            Assert.IsTrue(TextCheckMethodXPath("A Path to Success", "//*[@id='start']/div/div[1]/div/h2"));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("Your source for improving outcomes for students with " +
+                                                                                "literacy-related disabilities, including dyslexia.", "tagline",GCDriver));
+            Assert.IsTrue(TestingClass.TextCheckMethodXPath("A Path to Success", "//*[@id='start']/div/div[1]/div/h2",GCDriver));
             //GCDriver.FindElement(By.XPath("//*[@id='start']/div/div[1]/div/h2")).Text.CompareTo("A Path to Success");
             Console.WriteLine("1 Testing Tagline Text complete");
         }
@@ -91,9 +92,9 @@ namespace NCILWebTests
         {
             Console.WriteLine("4 KidZone Box Test");
             GCDriver.FindElement(By.CssSelector(".lead.margin-bottom")).Text.CompareTo(" The Literacy Playground for Kids & Families!");
-            Assert.IsTrue(TextCheckMethodClassName("LISTEN", "lime-text"));
-            Assert.IsTrue(TextCheckMethodClassName("READ", "pink-text"));
-            Assert.IsTrue(TextCheckMethodClassName("PLAY", "light-teal-text"));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("LISTEN", "lime-text",GCDriver));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("READ", "pink-text",GCDriver));
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("PLAY", "light-teal-text",GCDriver));
             Console.WriteLine("4 KidZone Box Test COMPLETE");
 
 
@@ -161,15 +162,15 @@ namespace NCILWebTests
         {
             
             Console.WriteLine("7 Footer text test");
-           Assert.IsTrue( TextCheckMethodCSS("Contact Us\r\nEmail Us\r\nFollow us on Facebook\r\nFollow us on Twitter\r\nSubscribe to our YouTube Feed\r\nShare\r\nShare on Facebook\r\n  Share on Twitter", ".footer-col.col-md-4"));
+           Assert.IsTrue(TestingClass.TextCheckMethodCSS("Contact Us\r\nEmail Us\r\nFollow us on Facebook\r\nFollow us on Twitter\r\nSubscribe to our YouTube Feed\r\nShare\r\nShare on Facebook\r\n  Share on Twitter", ".footer-col.col-md-4",GCDriver));
             
-            Assert.IsTrue(TextCheckMethodCSS("Stay Informed!\r\nEmail *", ".block-constant-contact.first.last.odd"));
+            Assert.IsTrue(TestingClass.TextCheckMethodCSS("Stay Informed!\r\nEmail *", ".block-constant-contact.first.last.odd",GCDriver));
 
-            Assert.IsTrue(TextCheckMethodClassName("The research reported here is funded by awards to the National Center on Improving Literacy from the Office of Elementary " +
+            Assert.IsTrue(TestingClass.TextCheckMethodClassName("The research reported here is funded by awards to the National Center on Improving Literacy from the Office of Elementary " +
                 "and Secondary Education, in partnership with the Office of Special Education Programs (Award #: S283D160003). The opinions expressed are those of the authors" +
-                " and do not represent views of OESE, OSEP, or the U.S. Department of Education.", "margin-top"));
+                " and do not represent views of OESE, OSEP, or the U.S. Department of Education.", "margin-top",GCDriver));
            
-           Assert.IsTrue(TextCheckMethodClassName("Copyright © 2018 National Center on Improving Literacy  Terms and Conditions | Privacy Policy | Accessibility", "footer-below"));
+           Assert.IsTrue(TestingClass.TextCheckMethodClassName("Copyright © 2018 National Center on Improving Literacy  Terms and Conditions | Privacy Policy | Accessibility", "footer-below",GCDriver));
             
 
             Console.WriteLine("7 footer text test COMPLETE");
@@ -268,30 +269,7 @@ namespace NCILWebTests
         }
 
 
-        public static bool TextCheckMethodClassName(string txtToCheck, string whereToCheck)
-        {
-
-            //method for testing if a supplied text a certain location (using class name) is found
-            if (GCDriver.FindElement(By.ClassName(whereToCheck)).Text.Equals(txtToCheck) == true)
-
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodCSS(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.CssSelector(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
-        public static bool TextCheckMethodXPath(string txtTocheck, string whereToCheck)
-        {
-            if (GCDriver.FindElement(By.XPath(whereToCheck)).Text.Equals(txtTocheck) == true)
-                return true;
-            else
-                return false;
-        }
+    
         [TestCleanup]
         public void CloseDrivers()
         {
