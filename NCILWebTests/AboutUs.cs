@@ -53,16 +53,16 @@ namespace NCILWebTests
               "approaches to screen, identify, and teach students with literacy-related disabilities, including dyslexia. Download our handout.");
 
         }
-        [TestMethod]
-        public void TestPDF()
-        {
-            GCDriver.FindElement(By.LinkText("Download our handout.")).Click();
+        //[TestMethod]
+        //public void TestPDF()
+        //{
+        //    GCDriver.FindElement(By.LinkText("Download our handout.")).Click();
 
-            IWebElement element = GCDriver.FindElement(By.Id("plugin"));
-            string myString = element.GetAttribute("src");
-            Assert.AreEqual(myString, "https://improvingliteracy.org/files/Improving-Literacy-Handout.pdf");
+        //    IWebElement element = GCDriver.FindElement(By.Id("plugin"));
+        //    string myString = element.GetAttribute("src");
+        //    Assert.AreEqual(myString, "https://improvingliteracy.org/files/Improving-Literacy-Handout.pdf");
 
-        }
+        //}
 
         [TestMethod]
         public void PictureTest()

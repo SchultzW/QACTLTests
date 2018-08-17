@@ -16,9 +16,10 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("headless");
-            GCDriver = new ChromeDriver(options);
+            //var options = new ChromeOptions();
+            //options.AddArgument("headless");
+            //GCDriver = new ChromeDriver(options);
+            GCDriver = new ChromeDriver();
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/resource-repository");
@@ -153,8 +154,11 @@ namespace NCILWebTests
         [TestMethod]
         public void ByTopicEvidenceBased()
         {
+            GCDriver.Manage().Window.Maximize();
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            WaitUntilElementClickable(By.Id("edit-submit-resource-repository"));
             GCDriver.FindElements(By.CssSelector(".fieldset-title"))[1].Click();
+            WaitUntilElementClickable(By.Id("edit-field-topic-tid-316"));
             GCDriver.FindElement(By.Id("edit-field-topic-tid-316")).Click();//evidence based
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
             GCDriver.FindElement(By.LinkText("An LEA Guide for Identifying Evidence-Based Interventions for School improvement"));
@@ -163,8 +167,11 @@ namespace NCILWebTests
         [TestMethod]
         public void ByTopicFluencyWithText()
         {
+            GCDriver.Manage().Window.Maximize();
             GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            WaitUntilElementClickable(By.Id("edit-submit-resource-repository"));
             GCDriver.FindElements(By.CssSelector(".fieldset-title"))[1].Click();
+            WaitUntilElementClickable(By.Id("edit-field-topic-tid-64"));
             GCDriver.FindElement(By.Id("edit-field-topic-tid-64")).Click();//evidence based
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
             GCDriver.FindElement(By.LinkText("Content of Effective Reading Instruction"));

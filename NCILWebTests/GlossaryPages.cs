@@ -18,9 +18,10 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("headless");
-            GCDriver = new ChromeDriver(options);
+            //var options = new ChromeOptions();
+            //options.AddArgument("headless");
+            //GCDriver = new ChromeDriver(options);
+            GCDriver = new ChromeDriver();
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/glossary");
             //GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
@@ -513,7 +514,7 @@ namespace NCILWebTests
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/glossary/module/ask-answer-phonemic-awareness");
             GCDriver.FindElement(By.LinkText("Download Phonemic-Awareness-Module-Transcript.pdf")).Click();
             System.Threading.Thread.Sleep(6000);
-            Assert.IsTrue(TestingClass.CheckFileDownloaded("honemic-Awareness-Module-Transcript.pdf"));
+            Assert.IsTrue(TestingClass.CheckFileDownloaded("Phonemic-Awareness-Module-Transcript.pdf"));
             GCDriver.FindElement(By.PartialLinkText("Download Phonemic-Awareness-Module-Audio.mp4")).Click();
             System.Threading.Thread.Sleep(6000);
             Assert.IsTrue(TestingClass.CheckFileDownloaded("Phonemic-Awareness-Module-Audio.mp4"));
