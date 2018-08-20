@@ -520,7 +520,7 @@ namespace NCILWebTests
                 Assert.IsTrue(element.Text.Equals(text[i]));
                 i++;
             }
-            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div[2]/div/div[1]/div[1]/p")).Text.Equals("New Hampshire's SIMR focuses on the social-emotional skills of preschool children with disabilities."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("New Hampshire's SIMR focuses on the social-emotional skills of preschool children with disabilities."));
 
         }
         [TestMethod]
@@ -597,6 +597,219 @@ namespace NCILWebTests
 
 
         }
-        
+        [TestMethod]
+        public void Ohio()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/ohio");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("HB96 and HB157"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("Ohio HB 157 authorizes professional development related to dyslexia and a dyslexia specialist. HB 96 amends section 3323.01 of Ohio law and enacts section 3323.25 which defines dyslexia, and which requires a pilot project to provide early screening and intervention services for children with risk factors for dyslexia. Statutes related to dyslexia can be found at: Ohio Laws and Rules."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("Ohio does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[8]")).Text.Equals("According to 3323.25, \"The superintendent of public instruction shall establish a pilot project to provide early screening and intervention services for children with risk factors for dyslexia, including low phonemic awareness. The state superintendent shall select three school districts to participate in the pilot project, one of which shall be located in an urban setting, one of which shall be located in a suburban setting, and one of which shall be located in a rural setting. Any school district selected to participate in the pilot project may establish a partnership with a regional library or library system for purposes of the pilot project. To be considered for the pilot project, a school district shall submit a proposal to the state superintendent that identifies a method of screening children for low phonemic awareness and other risk factors for dyslexia, provides for the enrollment of children identified as having risk factors for dyslexia in a reading program staffed by teachers trained in multisensory structured language programs, and includes a methodology for evaluating the effects of the reading program on the children's identified risk factors. The pilot project shall operate for three full school years, beginning with the school year that begins at least three months after the effective date of this section. The goal of the pilot project shall be to demonstrate and evaluate the effectiveness of early reading assistance programs for children with risk factors for dyslexia and to evaluate whether those programs can reduce future special education costs.\""));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("Ohio does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("Ohio does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("Ohio does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Ohio's SIMR aims to improve the (a) the percentage of possible points awarded on the state Report Card system for meeting targets related to third grade reading for students with disabilities, and (b) the \"percentage of all kindergarten through third grade students who are on track for literacy, as measured by state reading diagnostic assessments.\" Specific objectives vary by year."));
+
+
+        }
+        [TestMethod]
+        public void Oklahoma()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/oklahoma");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("HB390 and §_70-7001"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("HB 390 creates a scholarship to attend a private school of the recipient's choice. §_70-7001 creates a dyslexia pilot program."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("Oklahoma does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("Oklahoma does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[13]")).Text.Equals("Oklahoma does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[16]")).Text.Equals("Oklahoma does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Oklahoma's SIMR was, \"By FFY 2018, Oklahoma will see improved early literacy performance in specific districts in Tulsa County among students with disabilities taking the 3rd grade annual reading assessment. The passing rate (proficiency or above) in Tulsa County will increase from 20 percent to at least 30 percent in FFY 2018. Participating districts will also realize statistically significant improvement in the rate of growth toward proficiency among these students.\" This SIMR is scheduled to be updated this year."));
+
+        }
+        [TestMethod]
+        public void Oregon()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/oregon");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("SB612, SB1003, and HB2412"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("Directs the Oregon Department of Education to develop a plan to provide dyslexia screening and guidance for parental notification. Requires school districts to ensure that at least one kindergarten through grade five teacher per kindergarten through grade five school receives training related to dyslexia. Allows school districts to receive funding for training through Network of Quality Teaching and Learning. Declares an emergency, effective on passage."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("SB612 requires that the Oregon Department of Education develop a plan for universal screening. SB1003 specifically requires that public school students are screened in kindergarten and first grade. Screeners must be cost-effective and account for phonological awareness, rapid naming skills, the correspondence between sound and letter, and family history."));
+            IList<IWebElement> elements = GCDriver.FindElements(By.CssSelector("tr"));
+            List<string> text = new List<string> { "State Recognized Screeners", "AIMSweb", "DIBELS 6th Edition", "DIBELS Next", "easyCBM" };
+            int i = 0;
+            foreach (IWebElement element in elements)
+            {
+                Assert.IsTrue(element.Text.Equals(text[i]));
+                i++;
+            }
+            Assert.IsTrue(GCDriver.FindElement(By.Id("docs-internal-guid-581a5787-5aa6-e41b-3ecd-524260333148")).Text.Equals("SB612 states, \"Each school district shall ensure that at least one kindergarten through grade five teacher in each kindergarten through grade five school has received training related to dyslexia. The training must comply with the requirements described in subsection (3) of this section. (5)(a) A school district that does not comply with the requirements of this section and that does not secure a waiver from the department within the time required by the State Board of Education by rule is considered nonstandard under ORS 327.103. SB1003 further requires the Department of Education to annually develop a list of dyslexia training opportunities."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("ORS 342.147 requires the adoption of standards for instruction on dyslexia that are aligned with the International Dyslexia Association. The requirement applies to endorsement areas that include a significant focus on reading instruction: Elementary Education-Multiple Subjects, English to Speakers of Other Languages, Reading Intervention and Special Education: Generalist endorsements. The purpose of the dyslexia instruction standards is to provide educators with the knowledge and pedagogy skills that best serve students with dyslexia and other learning disabilities."));
+            //GCDriver.FindElement(By.XPath("//*[@id='docs -internal-guid-581a5787-5aa6-e41b-3ecd-524260333148']")).Text.Equals("SB612 states, \"Each school district shall ensure that at least one kindergarten through grade five teacher in each kindergarten through grade five school has received training related to dyslexia.The training must comply with the requirements described in subsection(3) of this section. (5)(a) A school district that does not comply with the requirements of this section and that does not secure a waiver from the department within the time required by the State Board of Education by rule is considered nonstandard under ORS 327.103.SB1003 further requires the Department of Education to annually develop a list of dyslexia training opportunities.");
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[16]")).Text.Equals("Oregon does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("According to SB612, the Oregon Department of Education must identify training opportunities that will enable teachers to recognize dyslexia and to provide systematic, explicit, and evidence-based instruction. Districts must ensure that each K-5 school has at least one K-5 teacher who has received such a training."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Oregon's SIMR is to \"increase the percentage of third-grade students with disabilities reading at grade level, as measured by state assessment.\""));
+        }
+        [TestMethod]
+        public void Pennsylvania()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/pennsylvania");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("Act 69 (24 P.S. Article XVII-C)"));
+           GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("Act 69 provides for a pilot program for dyslexia screening and intervention.");
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("Pennsylvania does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[8]")).Text.Equals("Act 69 created a dyslexia pilot program, but screening is not required by law."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("Pennsylvania does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("Pennsylvania does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("Pennsylvania does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]")).Text.Equals("Pennsylvania's SIMR focuses on graduation and drop-out rates."));
+            
+
+        }
+        [TestMethod]
+        public void PuertoRico()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/puerto-rico");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("Puerto Rico does not have dyslexia legislation."));
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[6]")).Text.Equals("Puerto Rico does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("Puerto Rico does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("Puerto Rico does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[15]")).Text.Equals("Puerto Rico does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Puerto Rico Department of Eduction's SIMR is to increase the percentage (%) of special education students in the 6th grade who score proficient or advanced on the regular assessment for math in the selected schools in the Yabucoa School District."));
+
+            
+
+        }
+        [TestMethod]
+        public void RhodeIsland()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/rhode-island");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]/a")).Text.Equals("H7052"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[5]")).Text.Equals("H7052 defines dyslexia and describes screening and intervention requirements related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("All school districts that provide elementary education are required to screen all children prior to, or upon, their first entry to school to determine their level of educational readiness. All children are required to participate in this screening. Screening shall address the child's educational development and shall be used to determine whether he or she is educationally disadvantaged in terms of readiness for instruction in the literacy skills of reading, writing, speaking, listening, or mathematics."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("See the state department of education website for guidance on selecting screeners."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[13]")).Text.Equals("Rhode Island does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("Rhode Island does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[19]")).Text.Equals("However, state law states that \"The literacy program shall also include assistance to students by providing strategies that formally address dyslexia, when appropriate. In addition, the department of elementary and secondary education shall offer to school districts, at no cost to the school district or to participants in the training, professional development services to enhance the skills of elementary teachers in the use of evidence-based strategies to improve the literacy skills of students with dyslexia.\""));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[23]")).Text.Equals("Law states, \"The commissioner of elementary and secondary education shall stipulate for each school district the specific cutoff points and the grades for required service each year. Services must be provided first to students who are most educationally disadvantaged. Services shall focus on instruction in reading, writing, speaking, listening, and mathematics. Program emphasis shall be as follows: (A) Intensive development in literacy. Kindergarten through grade three (3). (B) Early intervention in literacy. Grades four (4) through six (6) (C) Remediation in literacy. Grades seven (7) through eight (8). (D) Intensive remediation in literacy. Grades nine (9) through twelve.\""));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p[1]")).Text.Equals("Rhode Island's SIMR focuses on improving math proficiency."));
+
+
+        }
+        [TestMethod]
+        public void SouthCarolina()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/south-carolina");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("H.5024"));
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("H.5024 requires that before the 2016-2017 school year, \"the state department of education shall provide all literacy coaches and literacy teachers in kindergarten through third grade with training on dyslexia and related disorders, including evidence-based screenings, instructional methods, and interventions, among other things; and to impose related reporting requirements on the department.\""));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("South Carolina does not have screening legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("South Carolina does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[13]")).Text.Equals("State law states that 1. Before the beginning of the 2016-2017 school year, the State Department of Education shall provide training to all literacy coaches and literacy teachers in kindergarten through grade three on: (1) dyslexia and related reading disorders and their prevalence, using the internationally accepted definition from the International Dyslexia Association; (2) the use of evidence-based screening tools for dyslexia and other reading disorders that are age-appropriate and evaluate, as appropriate, the following skills: (a) phonological and phonemic awareness; (b) sound symbol recognition; (c) alphabet knowledge; (d) decoding and encoding skills; and (e) rapid naming skills; and (3) evidence-based, multi-sensory, instructional methods and interventions designed specifically for students with dyslexia and other reading disorders."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[16]")).Text.Equals("South Carolina does not have intervention legislation related to dyslexia."));
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("South Carolina's SIMR is: \"For students with disabilities in grade three, South Carolina will increase the percentage of students who are deemed proficient or higher on the statewide reading accountability assessment in select districts with the largest average achievement gaps as determined by the ESEA waiver (i.e., those districts with focus or priority schools).\""));
+
+
+
+
+        }
+        [TestMethod]
+        public void SouthDakota()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/south-dakota");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("South Dakota does not have dyslexia legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[6]")).Text.Equals("South Dakota does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("South Dakota does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("South Dakota does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[15]")).Text.Equals("South Dakota does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("South Dakota's SIMR is to raise reading proficiency amongst students with specific learning disabilities."));
+
+        }
+        [TestMethod]
+        public void Tennessee()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/tennessee");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("HB2635, HB1735/SB2002, and PC1058"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("Public Chapter 1058 tasks the state department of education with developing procedures and regulations related to the screening and intervention of dyslexia. Related requirements (including professional development requirements) are also discussed."));
+          Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("According to PC1058, \"The dyslexia screening procedures shall include phonological and phonemic awareness, sound-symbol recognition, alphabet knowledge, decoding skills, rapid naming, and encoding skills. (3) The dyslexia screening procedures shall be implemented by every LEA. (4) Dyslexia screening may be requested for any student by the student's parent or guardian, teacher, counselor, or school psychologist.\""));
+            IList<IWebElement> elements = GCDriver.FindElements(By.CssSelector("tr"));
+            List<string> text = new List<string> { "State Recognized Screeners", "AIMSweb", "CTOPP-2y", "Developmental Spelling Analysis", "DIBELS 6th Edition", "DIBELS Next", "easyCBM", "PALS-K", "PASS", "RAN/RAS", "TOWRE-2", "WIST" };
+            int i = 0;
+            foreach (IWebElement element in elements)
+            {
+                Assert.IsTrue(element.Text.Equals(text[i]));
+                i++;
+            }
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("Tennessee does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("Tennessee does not have in-service legislation related to dyslexia."));
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("State law states that \"(c) If the dyslexia screening conducted by the LEA indicates that a student has characteristics of dyslexia, the LEA shall: (1) Notify the student's parent or legal guardian; (2) Provide the student's parent or legal guardian with information and resource material regarding dyslexia; (3) Provide the student with appropriate tiered dyslexia-specific intervention through its RTl framework; and (4) Monitor the student's progress using a tool designed to measure the effectiveness of the intervention.\" The state defines \"Dyslexia-specific intervention\" as evidence-based, specialized reading, writing, and spelling instruction that is multi-sensory in nature, equipping students to simultaneously use multiple senses, such as vision, hearing, touch, and movement. Dyslexia-specific intervention employs direct instruction of systematic and cumulative content, with the sequence beginning with the easiest and most basic elements and progress methodically to more difficult material. Each step must also be based on those already learned. Components of dyslexia-specific intervention include instruction targeting phonological awareness, sound symbol association, syllable structure, morphology, syntax, and semantics."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("The SMIR is to increase the percentage of students with Specific Learning Disabilities that score at least Basic on the state achievement tests for grades 3 - 8 in Reading Language Arts."));
+        }
+        [TestMethod]
+        public void Texas()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/texas");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("Texas Administrative Code_74.28 and 2009 Amendment"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[5]")).Text.Equals("Texas Administrative Code_74.28 tasks the board of trustees of a school district with ensuring that procedures for identifying students with dyslexia are implemented. Related requirements are discussed."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("Texas has a number of regulations concerning the screening of students with dyslexia. Guidelines are described in the latest version of the Texas Dyslexia Handbook."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("HB1886 states, “Unless otherwise provided by law, a student determined to have dyslexia during screening or testing under Subsection (a) or accommodated because of dyslexia may not be rescreened or retested for dyslexia for the purpose of reassessing the student's need for accommodations until the district reevaluates the information obtained from previous screening or testing of the student.”"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("Please refer to the state handbook for guidance on selecting screeners."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("TEC §21.044(b) describes various pre-service requirements related to dyslexia."));
+          Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("HB1886 states, the state education agency “shall annually develop a list of training opportunities regarding dyslexia that satisfy the requirements of Section 21.054(b). The list of training opportunities must include at least one opportunity that is available online. (b) A training opportunity included in the list developed under Subsection (a) must: (1) comply with the knowledge and practice standards of an international organization on dyslexia; and (2) enable an educator to: (A) understand and recognize dyslexia; and (B) implement instruction that is systematic, explicit, and evidence-based to meet the educational needs of a student with dyslexia.”"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[18]")).Text.Equals("TEC §21.054(b) also describes various in-service requirements related to dyslexia."));
+           Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[21]")).Text.Equals("Texas has a number of regulations concerning the interventions for students with dyslexia. Guidelines are described in the latest version of the Texas Dyslexia Handbook."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p[1]")).Text.Equals("Increase the reading proficiency rate for all children with disabilities in grades 3-8 against grade level and alternate achievement standards, with or without accommodations."));
+        }
+        [TestMethod]
+        public void Utah()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/utah");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("SB0117"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("SB0117 creates a dyslexia pilot program in a multi-tiered intervention structure."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("Utah does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[8]")).Text.Equals("SB0117 created a dyslexia pilot program. Legislative changes may be forthcoming."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("Utah does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("Utah does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[17]")).Text.Equals("Utah does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Utah's SIMR focuses on math achievement."));
+            
+
+        }
+        [TestMethod]
+        public void Vermont()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/vermont");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.Id("docs-internal-guid-2154bec7-0314-7739-e29e-e121fa5f16d0")).Text.Equals("Vermont State Board of Education Rules (series 2360) identifies dyslexia as a specific learning disability. The Vermont State Board of Education has statutory authority."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[6]")).Text.Equals("Vermont does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("Vermont does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("Vermont does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[15]")).Text.Equals("Vermont does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Vermont's SIMR focuses on improving social-emotional skills of infants and toddlers."));
+
+        }
+        [TestMethod]
+        public void Washington()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/washington");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("SB6162"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[4]")).Text.Equals("This bill defines dyslexia, establishes screening and intervention requirements, and calls for supplementary actions by the superintendent of public instruction, including the convening of a dyslexia advisor panel."));
+            Assert.IsTrue(GCDriver.FindElement(By.Id("docs-internal-guid-2154bec7-216b-3887-9099-b487346febff")).Text.Equals("Beginning in 2021-2022, schools must “use screening tools and resources that exemplify best practices, as described under section 3 of this act. School districts may use the screening tools and resources identified by the superintendent of public instruction in accordance with section 3 of this act.” According to section 3, the superintendent of public instruction will identify screening tools that: “Satisfy developmental and academic criteria, including considerations of validity and reliability, that indicate typical literacy development or dyslexia, taking into account typical child neurological development; and (b) Identify indicators and areas of weakness that are highly predictive of future reading difficulty, including phonological awareness, phonemic awareness, rapid naming skills, letter sound knowledge, and family history of difficulty with reading and language acquisition. (2) Beginning September 1, 2019, the superintendent of public instruction must maintain on the agency's web site the list of screening tools and resources identified under this section and must include links to the tools and resources, when available. (3) The superintendent of public instruction must review and update the list of screening tools and resources identified under this section as appropriate.”"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[10]")).Text.Equals("Washington does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[13]")).Text.Equals("Washington does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("However, a dyslexia pilot program was created, with a goal to develop an educator training program to enhance the reading, writing, and spelling skills of students with dyslexia. The training program must provide research-based, multisensory literacy intervention professional development in the areas of dyslexia and intervention implementation."));
+            Assert.IsTrue(GCDriver.FindElement(By.Id("docs-internal-guid-2154bec7-216c-64dc-3b0a-05bfb792747f")).Text.Equals("According to SB6162, “(1) Beginning in the 2021-22 school year, and as provided in this section, each school district must use multitiered systems of support to provide interventions to students in kindergarten through second grade who display indications of, or areas of weakness associated with, dyslexia. In order to provide school districts with the opportunity to intervene before a student's performance falls significantly below grade level, school districts must screen students in kindergarten through second grade for indications of, or areas associated with, dyslexia as provided in this section.”"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[18]")).Text.Equals("The bill further states, “(a) If a student shows indications of below grade level literacy development or indications of, or areas of weakness associated with, dyslexia, the school district must provide interventions using evidence-based multitiered systems of support, consistent with the recommendations of the dyslexia advisory council under section 4 of this act and as required under this subsection (3). (b) The interventions must be evidence-based multisensory structured literacy interventions and must be provided by an educator trained in instructional methods specifically targeting students' areas of weakness. (c) Whenever possible, a school district must begin by providing student supports in the general education classroom. If screening tools and resources indicate that, after receiving the initial tier of student support, a student requires interventions, the school district may provide the interventions in either the general education classroom or a learning assistance program setting. If after receiving interventions, further screening tools and resources indicate that a student continues to have indications of, or areas of weakness associated with, dyslexia, the school district must recommend to the student's parents and family that the student be evaluated for dyslexia or a specific learning disability.” The bill also includes several reporting/notification requirements."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Washington's SIMR is to reduce the early literacy performance gap between kindergartners with disabilities and their typically developing peers."));
+
+
+        }
     }
 }
