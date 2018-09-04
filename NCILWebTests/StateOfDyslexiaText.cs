@@ -18,7 +18,7 @@ namespace NCILWebTests
         {
             var options = new ChromeOptions();
             options.AddArgument("headless");
-            GCDriver = new ChromeDriver(options);
+            GCDriver = new ChromeDriver();
 
             //GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
@@ -811,5 +811,60 @@ namespace NCILWebTests
 
 
         }
+        [TestMethod]
+        public void WashingtonDC()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/washington-dc");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("Washington DC does not have dyslexia legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[6]")).Text.Equals("Washington DC does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("Washington DC does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("Washington DC does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[15]")).Text.Equals("Washington DC does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Washington DC's SIMR focuses on graduation rates."));
+        }
+        [TestMethod]
+        public void WestVirginia()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/west-virginia");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]/a")).Text.Equals("HB4608"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[7]")).Text.Equals("According to HB4608, the state board is responsible for \"ensuring that all students receive the necessary and appropriate screenings, evaluations and early assessments for specific learning disabilities, including dyslexia and dyscalculia.\" Universality of screening may depend upon interpretation of \"necessary and appropriate.\" Senate Bill 69 sought to explicitly require universal screening in 2015, but the bill died before being passed."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[8]")).Text.Equals("See the state resource guide for information about selecting screeners."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[11]")).Text.Equals("West Virginia does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[14]")).Text.Equals("West Virginia does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("West Virginia's SIMR focuses on graduation rates."));
+
+        }
+        [TestMethod]
+        public void Wisconsin()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/wisconsin");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]")).Text.Equals("Wisconsin does not have dyslexia legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[6]")).Text.Equals("Wisconsin does not have dyslexia screening legislation."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("Wisconsin does not have pre-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("Wisconsin does not have in-service legislation related to dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[15]")).Text.Equals("Wisconsin does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p")).Text.Equals("Wisconsin's SIMR is: \"By June 30, 2019, at least 55% of 3rd grade students with IEPs in three target schools will perform at or above reading proficiency against grade level and alternate academic achievement standards as measured by the state assessment.\""));
+
+        }
+        [TestMethod]
+        public void Wyoming()
+        {
+            GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/state-of-dyslexia/wyoming");
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[2]/div[1]/div/span[2]/img", GCDriver);
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[3]/a")).Text.Equals("SF0052"));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[9]")).Text.Equals("The universal screening instrument assessment approved by the Wyoming Department of Education pursuant to W.S. §_ 21-3-110 and W.S. §_21-3-401 shall be used as the pre-screening instrument for reading difficulties, including dyslexia."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[12]")).Text.Equals("See Wyoming's Approved Evaluation Instrument list."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[19]")).Text.Equals("Wyoming does not have in-service legislation related to dyslexia."));
+            
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/p[23]")).Text.Equals("Wyoming does not require dyslexia intervention."));
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div[1]/div[1]/p[1]")).Text.Equals("Wyoming aims to increase in the percentage of third-grade students with disabilities who spend 21 to 60% of their school day outside the general education environment who score proficient or advanced on the statewide reading assessment."));
+
+
+        }
+      
+
     }
 }

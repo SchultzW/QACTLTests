@@ -14,6 +14,7 @@ namespace NCILWebTests
 {
     class TestingClass
     {
+        //GCDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         static IWebDriver GCDriver;
         public void SetUpDrivers()
         {
@@ -186,6 +187,14 @@ namespace NCILWebTests
                 Console.WriteLine("Element with locator: '" + elementLocator + "' was not found in current context page.");
                 throw;
             }
+        }
+        public static bool IsCSSPresent(string toCheck)
+        {
+            //if ((Assert.IsTrue(GCDriver.FindElement(By.CssSelector(toCheck)))
+            if (GCDriver.FindElement(By.CssSelector(toCheck)).Displayed == true)
+                return true;
+            else
+                return false;
         }
 
     }
