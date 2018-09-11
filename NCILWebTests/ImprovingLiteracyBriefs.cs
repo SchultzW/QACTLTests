@@ -198,8 +198,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentLinkText("Download PDF",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
-          
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
         }
         [TestMethod]
         public void KeyRolesForChildrensSuccess()
@@ -210,7 +209,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom", GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom", GCDriver);
 
         }
         [TestMethod]
@@ -236,7 +235,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
 
         }
         [TestMethod]
@@ -249,7 +248,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[8]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
 
         }
         [TestMethod]
@@ -261,7 +260,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[11]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
 
 
         }
@@ -274,7 +273,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[12]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
            
         }
         [TestMethod]
@@ -287,7 +286,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[1]/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[9]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
 
         }
         [TestMethod]
@@ -302,7 +301,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
             TestingClass.IsElementPresentCSS(".panel.panel-default.panel-horizontal",GCDriver);
             TestingClass.IsElementPresentCSS(".panel-heading",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
 
         }
         [TestMethod]
@@ -316,7 +315,7 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[15]/a/img",GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div[1]/p[16]/a/img",GCDriver);
             TestingClass.IsElementPresentLinkText("Related Resources",GCDriver);
-            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);//keep reading
+            TestingClass.IsElementPresentClassName("margin-bottom",GCDriver);
             TestingClass.IsElementPresentCSS(".panel-heading",GCDriver);
 
         }

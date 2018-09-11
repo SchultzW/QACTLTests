@@ -390,6 +390,7 @@ namespace NCILWebTests
             WaitUntilElementClickable(By.Id("edit-field-resource-type-tid-62"));
             GCDriver.FindElement(By.Id("edit-field-resource-type-tid-62")).Click();//evidence based
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
+            System.Threading.Thread.Sleep(6000);
             GCDriver.FindElement(By.LinkText("Advanced Phonics and Decoding: Perfecting Our Craft and Planning for the Future, 2nd-3rd Grades"));
             GCDriver.FindElement(By.Id("edit-reset")).Click();//reset            
         }
@@ -405,6 +406,7 @@ namespace NCILWebTests
             WaitUntilElementClickable(By.Id("edit-field-resource-type-tid-59"));
             GCDriver.FindElement(By.Id("edit-field-resource-type-tid-59")).Click();//evidence based
             GCDriver.FindElement(By.Id("edit-submit-resource-repository")).Click();//submit button
+            System.Threading.Thread.Sleep(6000);
             GCDriver.FindElement(By.LinkText("Nebraska's Technical Assistance Document on Dyslexia"));
             GCDriver.FindElement(By.Id("edit-reset")).Click();//reset            
         }

@@ -28,14 +28,14 @@ namespace NCILWebTests
 
         }
         [TestMethod]
-        public void BtnTxtCheck()
+        public void MainPageCheck()
         {
-            System.Threading.Thread.Sleep(6000);System.Threading.Thread.Sleep(6000);
-            Assert.IsTrue(GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Text.Equals("I'm a Caregiver"));
-            //IList<IWebElement> btns=GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0];
-            //Assert.IsTrue(GCDriver.FindElement(By.CssSelector(btns[0])).Text.Equals("I'm a Caregiver");
+            System.Threading.Thread.Sleep(6000);
+            Assert.IsTrue(GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Text.Equals("I'm a Caregiver"));      
             Assert.IsTrue(GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[1].Text.Equals("I'm a Practitioner"));
-
+            GCDriver.FindElement(By.XPath("//*[@id='page-top']/header/div/div/div/nav")).Text.Equals("Home");
+            GCDriver.FindElement(By.XPath("//*[@id='page-top']/header/div/div/div/div")).Text.Equals("Answer questions to help assess your student's literacy level. Get recommendations to help your student succeed!");
+            TestingClass.IsElementPresentXpath("//*[@id='page-top']/header/div/div", GCDriver);
         }
         [TestMethod]
         public void BtnClick()
@@ -131,6 +131,66 @@ namespace NCILWebTests
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div/router-view/router-view/router-view/router-view/router-view/div[1]/div/div/resources-by-category/form/div/div[2]", GCDriver);
             TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div/router-view/router-view/router-view/router-view/router-view/div[1]/div/div/resources-by-category/form/div/div[3]", GCDriver);
 
+
+        }
+        //here below for xbrowser
+        [TestMethod]
+        public void CaregiverYesAllTest()
+        {
+            //test chooses all yes for caregiver. should give message saying your student is good.
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.ClassName("au-target"))[9].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.ClassName("au-target"))[16].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.ClassName("au-target"))[23].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.ClassName("au-target"))[32].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElement(By.CssSelector(".btn.btn-primary.btn-lg")).Click();
+            Assert.IsTrue(GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div/router-view/router-view/router-view/router-view/router-view/div[1]/div/div/h2")).Text.Equals("Your student is doing great!"));
+
+        }
+        [TestMethod]
+        public void StartOverTest()
+        {
+            GCDriver.Manage().Window.Maximize();
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElement(By.XPath("//*[@id='content']/div/div/div/router-view/router-view/router-view/router-view/div/div[2]/p/a")).Click();
+            System.Threading.Thread.Sleep(600);
+            Assert.IsTrue(GCDriver.Url.Equals("https://improvingliteracy2.uoregon.edu/checklist#/personas"));
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            TestingClass.IsElementPresentXpath("//*[@id='content']/div/div/div/router-view/router-view/router-view/router-view/div/div[1]/div/questions/form/div[1]/question/div[1]/div/h2", GCDriver);
+
+        }
+        [TestMethod]
+        public void NoChoices()
+        {
+            //test that chooses no radio buttons and clicks to show results. should stay on the same page. the page has a small pop up but i dont think i can test it.
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            GCDriver.FindElement(By.CssSelector(".btn.btn-primary.btn-lg")).Click();
+            Assert.IsTrue(GCDriver.Url.Equals("https://improvingliteracy2.uoregon.edu/checklist#/personas/caregiver/K1"));
+        }
+        [TestMethod]
+        public void OneChoice()
+        {
+            //only chooses one radio button and clicks results
+            GCDriver.Manage().Window.Maximize();
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            GCDriver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.au-target"))[0].Click();
+            System.Threading.Thread.Sleep(600);
+            GCDriver.FindElements(By.ClassName("au-target"))[9].Click();
+            GCDriver.FindElement(By.CssSelector(".btn.btn-primary.btn-lg")).Click();
+            Assert.IsTrue(GCDriver.Url.Equals("https://improvingliteracy2.uoregon.edu/checklist#/personas/caregiver/K1"));
 
         }
 

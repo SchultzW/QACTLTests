@@ -864,7 +864,12 @@ namespace NCILWebTests
 
 
         }
-      
 
+        [TestCleanup]
+        public void CloseDrivers()
+        {
+            GCDriver.Quit();
+            //GCDriver.Close();
+        }
     }
 }
