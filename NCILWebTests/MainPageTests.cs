@@ -13,8 +13,8 @@ namespace NCILWebTests
         [TestInitialize]
         public void SetUpDrivers()
         {
-            //var options = new ChromeOptions();
-            //options.AddArgument("headless");
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
             GCDriver = new ChromeDriver();
             GCDriver.Navigate().GoToUrl("https://improvingliteracy.org/");
         }
@@ -108,13 +108,13 @@ namespace NCILWebTests
             Console.WriteLine("5 Tools and Events Title test");
             IList<IWebElement> toolsEventsBoxeTitles = GCDriver.FindElements(By.ClassName("teal-text"));
             List<string> toolsAndEventsTrueTitle = new List<string>();
-            toolsAndEventsTrueTitle.Add("Tools & Events");
+            toolsAndEventsTrueTitle.Add("Tools");
             toolsAndEventsTrueTitle.Add("Resource Repository");
             toolsAndEventsTrueTitle.Add("Improving Literacy Briefs");
             toolsAndEventsTrueTitle.Add("State of Dyslexia");
             toolsAndEventsTrueTitle.Add("Ask an Expert");
             toolsAndEventsTrueTitle.Add("Learning Literacy Glossary");
-            toolsAndEventsTrueTitle.Add("Events & Opportunities");
+            //toolsAndEventsTrueTitle.Add("Events & Opportunities");
             bool flag = false;
             for (int i = 0; i < toolsEventsBoxeTitles.Count - 1; i++)
             {
@@ -221,13 +221,13 @@ namespace NCILWebTests
             Assert.IsTrue(GCDriver.Title.Equals("Learning Literacy Glossary | National Center on Improving Literacy"));
             Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".page__title")).Text.Equals("Learning Literacy Glossary"));
         }
-        [TestMethod]
-        public void EventsAndOpportunites()
-        {
-            GCDriver.FindElement(By.LinkText("View Events")).Click();
-            Assert.IsTrue(GCDriver.Title.Equals("Events & Opportunites | National Center on Improving Literacy"));
-            Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".page__title")).Text.Equals("Events & Opportunites"));
-        }
+        //[TestMethod]
+        //public void EventsAndOpportunites()
+        //{
+        //    GCDriver.FindElement(By.LinkText("View Events")).Click();
+        //    Assert.IsTrue(GCDriver.Title.Equals("Events & Opportunites | National Center on Improving Literacy"));
+        //    Assert.IsTrue(GCDriver.FindElement(By.CssSelector(".page__title")).Text.Equals("Events & Opportunites"));
+        //}
         [TestMethod]
         public void AboutUs()
         {

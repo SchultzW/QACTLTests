@@ -18,7 +18,7 @@ namespace NCILWebTests
                                         { "https://improvingliteracy.org/state-of-dyslexia/kentucky","Yes","No","No","No","No","No"},
                                         {"https://improvingliteracy.org/state-of-dyslexia/maine","Yes","Yes","No","Yes","No","No"},
                                          {"https://improvingliteracy.org/state-of-dyslexia/maryland","yes", "no", "no", "no", "no","no" },
-                                        {"https://improvingliteracy.org/state-of-dyslexia/massachusetts","No","No","No","No","No","No" },
+                                        {"https://improvingliteracy.org/state-of-dyslexia/massachusetts","yes","No","No","No","No","No" },
                                         {"https://improvingliteracy.org/state-of-dyslexia/minnesota","yes" ,"yes","no","yes","yes","no" },
                                         {"https://improvingliteracy.org/state-of-dyslexia/montana","no","no","no","no","no","no" },
                                         {"https://improvingliteracy.org/state-of-dyslexia/new-hampshire","yes","yes", "yes", "yes","yes","no" },
